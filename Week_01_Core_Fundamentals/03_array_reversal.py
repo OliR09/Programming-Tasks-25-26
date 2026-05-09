@@ -21,3 +21,17 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+import random
+
+amt = 10
+Values = random.sample(range(1, 100), amt)
+
+def reverse_list(Values):
+    start = 0
+    end = len(Values) - 1
+    while start < end:
+        Values[start], Values[end] = Values[end], Values[start]
+        start += 1
+        end -= 1
+    return Values

@@ -21,3 +21,23 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+sentence = input("Enter a sentence: ")
+
+words = []
+new_sentence = ""
+count = 0
+
+for i in sentence:
+    if i == " ":
+        words.append(new_sentence)
+        new_sentence = ""
+        count += 1
+    else:
+        new_sentence += i
+if new_sentence:
+    words.append(new_sentence)
+    count += 1
+
+print(count)
+print(words)

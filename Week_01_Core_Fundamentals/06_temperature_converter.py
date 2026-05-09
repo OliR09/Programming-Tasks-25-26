@@ -21,3 +21,19 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+while True:
+    print("Celcius to Fahrenheit: 1")
+    print("Fahrenheit to Celcius: 2")
+    print("Exit: 3")
+    choice = input("Choose an option: ")
+    if choice == "1":
+        celcius = float(input("Enter a temperature in Celcius: "))
+        fahrenheit = (celcius * 1.8) + 32
+        print("The temperature in fahrenheit is:", fahrenheit)
+    elif choice == "2":
+        fahrenheit = float(input("Enter a temperature in Fahrenheit:"))
+        celcius = (fahrenheit - 32) / 1.8
+        print("The temperature in celcius is:", celcius)
+    elif choice == "3":
+        break

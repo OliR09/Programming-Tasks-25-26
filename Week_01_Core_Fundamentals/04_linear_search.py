@@ -22,3 +22,16 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+import random
+amt = 10
+Values = random.sample(range(1, 100), amt)
+
+def linear_search(Values, target):
+    for i in range(len(Values)):
+        if Values[i] == target:
+            return i
+    return -1
+
+target = int(input("Enter a number to search for: "))
+print(linear_search(Values, target))

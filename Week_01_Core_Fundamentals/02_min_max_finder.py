@@ -21,3 +21,14 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+def find_min_max(Values):
+    max_value = Values[0]
+    for i in Values:
+        if i > max_value:
+            max_value = i
+    min_value = Values[0]
+    for i in Values:
+        if i < min_value:
+            min_value = i
+    return min_value, max_value
