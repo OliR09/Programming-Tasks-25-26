@@ -3,6 +3,9 @@
     "editor.tabSize": 4,
     "editor.formatOnSave": true,
     "files.trimTrailingWhitespace": true,
+    // Python interpreter
+    "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+    "python.pythonPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
     // Testing
     "python.testing.pytestEnabled": true,
     "python.testing.unittestEnabled": false

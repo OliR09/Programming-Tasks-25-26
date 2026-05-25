@@ -12,6 +12,27 @@ TODO:
 - Add demonstration code under `if __name__ == "__main__":`
 """
 
+
+def find_min(Values):
+    if not Values:
+        raise ValueError("Values list is empty")
+    min_value = Values[0]
+    for i in Values:
+        if i < min_value:
+            min_value = i
+    return min_value
+
+
+def find_max(Values):
+    if not Values:
+        raise ValueError("Values list is empty")
+    max_value = Values[0]
+    for i in Values:
+        if i > max_value:
+            max_value = i
+    return max_value
+
+
 def main():
     # TODO: Write demonstration/testing code
     # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
@@ -21,14 +42,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-def find_min_max(Values):
-    max_value = Values[0]
-    for i in Values:
-        if i > max_value:
-            max_value = i
-    min_value = Values[0]
-    for i in Values:
-        if i < min_value:
-            min_value = i
-    return min_value, max_value

@@ -12,32 +12,31 @@ TODO:
 - Add demonstration code under `if __name__ == "__main__":`
 """
 
+def count_words(sentence):
+    words = []
+    current = ""
+    for char in sentence:
+        if char == " ":
+            if current != "":
+                words.append(current)
+                current = ""
+        else:
+            current += char
+    if current != "":
+        words.append(current)
+    return len(words)
+
+
+def is_palindrome(sentence):
+    cleaned = "".join(ch.lower() for ch in sentence if ch.isalnum())
+    return cleaned == cleaned[::-1]
+
+
 def main():
-    # TODO: Write demonstration/testing code
-    # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
-    # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
-    pass
+    sentence = input("Enter a sentence: ")
+    print(count_words(sentence))
+    print(is_palindrome(sentence))
 
 
 if __name__ == "__main__":
     main()
-
-sentence = input("Enter a sentence: ")
-
-words = []
-new_sentence = ""
-count = 0
-
-for i in sentence:
-    if i == " ":
-        words.append(new_sentence)
-        new_sentence = ""
-        count += 1
-    else:
-        new_sentence += i
-if new_sentence:
-    words.append(new_sentence)
-    count += 1
-
-print(count)
-print(words)

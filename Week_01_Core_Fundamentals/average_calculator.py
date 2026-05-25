@@ -14,33 +14,35 @@ TODO:
 - Add demonstration code under `if __name__ == "__main__":`
 """
 
-from optparse import Values
+
+def calculate_average(values):
+    if len(values) == 0:
+        raise ValueError("The list cannot be empty")
+    total = 0.0
+    for i in values:
+        total += i
+
+    return total / len(values)
 
 
 def main():
     pass
+    numbers = []
+
+    UserNum = input("Enter a list of numbers separated by spaces: ")
+    split_numbers = UserNum.split()
+    for num in split_numbers:
+        try:
+            numbers.append(float(num))
+        except ValueError:
+            print(num, " is not a valid number")
+
+    if len(numbers) > 0:
+        average = calculate_average(numbers)
+        print(average)
+    else:
+        print("No valid numbers were entered.")
 
 
 if __name__ == "__main__":
     main()
-
-def calculate_average(Values):
-    total = 0
-    for i in Values:
-        total += i
-    average = total / len(Values)
-    return average
-    while True:
-        num = int(input("Input numbers to find the average of, type 'x' to finish"))
-
-        if num == "x":
-            break
-
-        try:
-            values.append(int(num))
-        except:
-            print("Please input a valid integer.")
-    mean = sum(values) / len(values)
-    print("Average is:", mean)
-
-calculate_average(Values)

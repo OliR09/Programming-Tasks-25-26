@@ -12,6 +12,7 @@ TODO:
 - Add demonstration code under `if __name__ == "__main__":`
 """
 
+
 def main():
     # TODO: Write demonstration/testing code
     # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
@@ -22,16 +23,15 @@ def main():
 if __name__ == "__main__":
     main()
 
-import random
 
-amt = 10
-Values = random.sample(range(1, 100), amt)
+def reverse_array(values):
+    reversed_values = []
+    index = len(values) - 1
+    while index >= 0:
+        reversed_values.append(values[index])
+        index -= 1
+    return reversed_values
 
-def reverse_list(Values):
-    start = 0
-    end = len(Values) - 1
-    while start < end:
-        Values[start], Values[end] = Values[end], Values[start]
-        start += 1
-        end -= 1
-    return Values
+
+def reverse_list(values):
+    return reverse_array(values)
