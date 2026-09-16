@@ -15,9 +15,42 @@ TODO:
 """
 
 def main():
-    # TODO: Write demonstration/testing code
-    # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
-    # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
+    def checkPassword(password):
+    length8 = False
+    number = False
+    SpecialCharacter = False
+    Special = "@#£!%&*?"
+    Capital = False
+    Lower = False
+    
+    length = len(password)
+    if length < 8:
+        print("Password is too weak")
+        
+    for i in range(0, length):
+        character = password[i]
+        if character.isupper():
+            Capital = True
+        elif character.islower():
+            Lower = True
+        elif character.isdigit():
+            number = True
+        elif character in Special:
+            SpecialCharacter = True
+            
+    if Capital == False:
+        print("Your password must contain an uppercase letter")
+    if Lower == False:
+        print("Your password must contain a lowercase letter")
+    if number == False:
+        print("Your password must contain a number")
+    if SpecialCharacter == False:
+        print("Your password must contain a special character")
+    else:
+        print("Your password is strong")
+            
+password = "1234qweR#"
+checkPassword(password)
     pass
 
 
