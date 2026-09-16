@@ -12,9 +12,56 @@ TODO:
 """
 
 def main():
-    # TODO: Write demonstration/testing code
-    # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
-    # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
+
+    class CircularQueue:
+        def __init__(self,maxItems):
+            self.items = [None]*maxItems
+            self.front = 0
+            self.rear = -1
+            self.queueSize = 0
+            self.maxSize = maxItems
+
+        def enQueue(self,item):
+            if self.queueSize == self.maxSize:
+                print("Queue is at full size =", self.queueSize)
+            else:
+                self.rear = (self.rear + 1)%(self.maxSize)
+                self.queueSize += 1
+                self.items[self.rear] = items
+    
+        def deQueue(self):
+            if (self.queueSize == 0):
+                return "Queue Empty"
+            else:
+                first = self.items[self.front]
+                self.queueSize -= 1
+                self.front = (self.front + 1)%(self.maxSize)
+                return first
+
+        def peek(self):
+            if self.queueSize == 0:
+                return "Queue empty"
+            else:
+                return self.items[self.front]
+    
+        def size(self):
+            return self.queueSize
+
+queue = CircularQueue(5)
+
+queue.enQueue("Customer 1")
+queue.enQueue("Customer 2")
+queue.enQueue("Customer 3")
+
+print("Next customer:", queue.peek())
+print("Queue size:", queue.size())
+
+print("Leaving:", queue.deQueue())
+print("Leaving:", queue.deQueue())
+
+print("Next customer:", queue.peek())
+print("Queue size:", queue.size())
+
     pass
 
 
