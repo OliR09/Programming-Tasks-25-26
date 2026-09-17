@@ -13,9 +13,39 @@ TODO:
 """
 
 def main():
-    # TODO: Write demonstration/testing code
-    # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
-    # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
+
+    def loadDetails(filename="logindetails.txt"):
+    details = {}
+    with open (filename, "r") as file:
+        for line in file:
+            line = line.strip()
+            if line and ":" in line:
+                username, password = line.split(":", 1)
+                details[username] = password
+    return details
+
+    def loginSystem():
+        userDatabase = loadDetails()
+        
+        attempts = 0
+    
+        while attempts < 3:
+            username = input("Enter your username:")
+            password = input("Enter your password:")
+            
+            if username in userDatabase and userDatabase[username] == password:
+                print("Welcome")
+                return True
+            else:
+                attempts += 1
+                print("Access Denied",3 - attempts, "attempts remaining")
+                
+                if attempts == 3:
+                    print("No remaining attempts left.")
+                    return False
+                    
+    loginSystem()
+        
     pass
 
 
