@@ -15,9 +15,50 @@ TODO:
 """
 
 def main():
-    # TODO: Write demonstration/testing code
-    # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
-    # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
+    
+    import csv
+
+filename = people.csv
+
+def addPerson():
+    name = input("Input your name: ")
+    age = input("Input your age: ")
+    colour = input("Input your favourite colour: ")
+    with open(filename, "r", newLine = "") as file:
+        writer = csv.write(file)
+        write.writerow([name, age, colour])
+    print("Person added")
+    
+def readFile():
+    with open(filename, "r", newLine = "") as file:
+        reader = csv.reader(file)
+        for row in reader:
+            print(row)
+                
+def editPerson():
+    people = []
+    with open(filename, "r", newLine = "") as file:
+        reader = csv.reader(file)
+        people = list(reader)
+    
+if len(people) == 0:
+    print("The file is empty")
+
+for i, person in enumerate(people):
+    print(i+1, person)
+    
+choice = int(input("Who do you want to edit?")) - 1
+
+name = input("Enter the new age: ")
+age = input("Enter the new age: ")
+colour = input("Enter the new favourite colour: ")
+
+people[choice] = [name, age, colour]
+
+with open(filename, "w", newLine = "") as file:
+    writer = csv.writer(file)
+    writer.writerows(people)
+
     pass
 
 
