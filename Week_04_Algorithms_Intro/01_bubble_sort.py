@@ -13,9 +13,18 @@ TODO:
 """
 
 def main():
-    # TODO: Write demonstration/testing code
-    # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
-    # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
+   
+    def bubbleSort(array):
+    n = len(array)
+    for i in range(n):
+        for j in range(0, n-1):
+            if array[j] > array[j+1]:
+                array[j], array[j+1] = array[j+1], array[j]
+
+array = [9,8,7,6,5,4,3,2,1]
+bubbleSort(array)
+print(array)
+
     pass
 
 
