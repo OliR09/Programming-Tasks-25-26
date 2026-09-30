@@ -13,9 +13,26 @@ TODO:
 """
 
 def main():
-    # TODO: Write demonstration/testing code
-    # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
-    # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
+
+    import random
+numbers = []
+
+for i in range(10):
+    numbers.append(random.randint(1,100))
+    
+for i in range(1, len(numbers)):
+    current = numbers[i]
+    j = i - 1
+    
+    while j >= 0 and numbers[j] > current:
+        numbers[j+1] = numbers[j]
+        j -= 1
+        
+    numbers[j + 1] = current
+    
+    
+    
+print(numbers)
     pass
 
 
