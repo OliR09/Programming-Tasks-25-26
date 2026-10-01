@@ -13,9 +13,41 @@ TODO:
 """
 
 def main():
-    # TODO: Write demonstration/testing code
-    # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
-    # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
+
+import random
+numbers = []
+
+for i in range(10):
+    numbers.append(random.randint(1,100))
+    
+numbers.sort()
+
+low = 0 
+high = len(numbers) - 1
+
+print(numbers)
+target = int(input("What is the target number?"))
+
+found = False
+
+while low <= high:
+    middle = (low + high) // 2
+    
+    if numbers[middle] == target:
+        found = True
+        print("Found at index",middle + 1)
+        break
+    elif numbers[middle] < target:
+        low = middle + 1
+    else:
+        high = middle - 1
+        
+if found:
+    print("Found")
+    
+else:
+    print("Not found")
+    
     pass
 
 
