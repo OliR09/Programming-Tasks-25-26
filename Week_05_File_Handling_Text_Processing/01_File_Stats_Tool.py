@@ -14,9 +14,38 @@ TODO:
 """
 
 def main():
-    # TODO: Write demonstration/testing code
-    # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
-    # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
+
+    filename = input("Enter the filename: ")
+
+file = open(filename, "r")
+
+lines = 0
+characters = 0
+mostFreq = []
+
+for line in file:
+    line += 1
+    characters += len(line)
+    lineWords = line.split()
+    for word in lineWords:
+        mostFreq.append(word)
+        
+        
+print("Number of lines:", lines)
+print("Number of words:", len(mostFreq))
+print("Number of characters:", characters)
+
+mostFrequentWord = ""
+highest = 0
+for i in mostFreq:
+    count = mostFreq.count(i)
+    
+    if count > highest:
+        highest = count
+        mostFrequentWord = i
+        
+print("Most frequent word is:", mostFrequentWord)
+    
     pass
 
 
